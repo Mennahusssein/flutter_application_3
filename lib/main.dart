@@ -26,148 +26,164 @@ class CoffeeShopPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-           child: Container(color: Color(0xFF2A2A2A),height: 350,
-        
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 30), // Space for status bar
-        
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '   Location',
-                      style: TextStyle(fontSize: 12, color: Color(0xFFA2A2A2)),
-                    ),
-                  ],
-                ),
-        
-                const Row(
-                  children: [
-                    SizedBox(width: 4),
-                    Text(
-                      '  Bilzen, Tanjungbalai',
-                      style: TextStyle(fontSize: 14, color: Color(0xFFD8D8D8)),
-                    ),
-                    Icon(
-                      Icons.arrow_drop_down_outlined,
-                      color: Color(0xFFD8D8D8),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16,),
-                 Row(
-                  children: [
-                    Container(
-                      width: 1200, // Adjust the width as needed
-                      child: TextField(
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.search,color: Colors.white,),
-                          hintText: 'Search coffee',hintStyle: TextStyle(color: Color(0xFFA2A2A2)),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
+            child: Container(
+              color: const Color(0xFF2A2A2A),
+              height: 350,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 30), // Space for status bar
+
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '   Location',
+                        style:
+                            TextStyle(fontSize: 12, color: Color(0xFFA2A2A2)),
+                      ),
+                    ],
+                  ),
+
+                  const Row(
+                    children: [
+                      SizedBox(width: 4),
+                      Text(
+                        '  Bilzen, Tanjungbalai',
+                        style:
+                            TextStyle(fontSize: 14, color: Color(0xFFD8D8D8)),
+                      ),
+                      Icon(
+                        Icons.arrow_drop_down_outlined,
+                        color: Color(0xFFD8D8D8),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 1200, // Adjust the width as needed
+                        child: TextField(
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(
+                              Icons.search,
+                              color: Colors.white,
+                            ),
+                            hintText: 'Search coffee',
+                            hintStyle:
+                                const TextStyle(color: Color(0xFFA2A2A2)),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(width: 8), // Add some space between the TextField and the Image
-                    Image.asset(
-                      'images/Filet.png', // Replace with your image asset
-                      width: 40,
-                      height: 40,
-                    ),
-                  ],
-                ),
-               
-                const SizedBox(height: 16),
-                Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    //color: Colors.orange,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
+                      const SizedBox(
+                          width:
+                              8), // Add some space between the TextField and the Image
                       Image.asset(
-                        'images/ad.png',
-                        height: 150,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
+                        'images/Filet.png', // Replace with your image asset
+                        width: 40,
+                        height: 40,
                       ),
-                      Image.asset("images/details.png", height: 100, width: 200)
                     ],
                   ),
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFC67C4E),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    child:const Text(
-                      'All Coffee',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,color: Colors.white
-                      ),
-                    ),),
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            'Machiatto',
-                            style:
-                                TextStyle(color: Color(0xFF313131), fontSize: 14),
-                          ),
-                          SizedBox(width: 100),
-                          Text(
-                            'Latte',
-                            style:
-                                TextStyle(color: Color(0xFF313131), fontSize: 14),
-                          ),
-                          SizedBox(width: 100),
-                          Text(
-                            'Americano',
-                            style:
-                                TextStyle(color: Color(0xFF313131), fontSize: 14),
-                          ),
-                        ],
-                      ),
+
+                  const SizedBox(height: 16),
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      //color: Colors.orange,
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                ListView(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    CoffeeItem(
-                      image: 'assets/mocha.png',
-                      name: 'Caffe Mocha',
-                      description: 'Deep Foam',
-                      price: 4.53,
-                      rating: 4.8,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Image.asset(
+                          'images/ad.png',
+                          height: 150,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset("images/details.png",
+                            height: 100, width: 200)
+                      ],
                     ),
-                    CoffeeItem(
-                      image: 'assets/flat_white.png',
-                      name: 'Flat White',
-                      description: 'Espresso',
-                      price: 3.53,
-                      rating: 4.8,
-                    ),
-                  ],
-                ),
-              ],
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 16),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFC67C4E),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          'All Coffee',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                      ),
+                      const Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              'Machiatto',
+                              style: TextStyle(
+                                  color: Color(0xFF313131), fontSize: 14),
+                            ),
+                            SizedBox(width: 100),
+                            Text(
+                              'Latte',
+                              style: TextStyle(
+                                  color: Color(0xFF313131), fontSize: 14),
+                            ),
+                            SizedBox(width: 100),
+                            Text(
+                              'Americano',
+                              style: TextStyle(
+                                  color: Color(0xFF313131), fontSize: 14),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  ListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      CoffeeItem(
+                        image: 'assets/mocha.png',
+                        name: 'Caffe Mocha',
+                        description: 'Deep Foam',
+                        price: 4.53,
+                        rating: 4.8,
+                      ),
+                      CoffeeItem(
+                        image: 'assets/flat_white.png',
+                        name: 'Flat White',
+                        description: 'Espresso',
+                        price: 3.53,
+                        rating: 4.8,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
-        ),),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -235,7 +251,7 @@ class CoffeeItem extends StatelessWidget {
             ),
             const Spacer(),
             IconButton(
-              color: Color(0xFFC67C4E),
+              color: const Color(0xFFC67C4E),
               icon: const Icon(Icons.add),
               onPressed: () {},
             ),
